@@ -1,12 +1,11 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
 *{
-    
     box-sizing: border-box;
     font-family: Raleway, Arial, Helvetica, sans-serif;
 }
 
-html, body{
+html, body {
     margin:0px;
     padding: 0px;
     background-color: #CCCCCC;

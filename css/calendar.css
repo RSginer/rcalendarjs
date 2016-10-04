@@ -41,7 +41,7 @@
 .calendar_body_week_day{
         display: inline-block;
         width: 13.87971429%;
-        height: 5%;
+        height: 80px;
         text-align: center;
         padding: 5px;
         border-radius:10px;

@@ -1,125 +1,36 @@
 <html>
-
-<head>
-    <title>JSCalendar by RSginer</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/calendar.css" />
-    <script src="js/calendar.js"></script>
-</head>
-
-<body>
-    <div class="container">
-        <div class="calendar">
-            <div class="calendar_header">MES</div>
-            <div class="calendar_body">
-                <div class="calendar_body_days">
-                    <div class="calendar_body_days_day">L</div>
-                    <div class="calendar_body_days_day">M</div>
-                    <div class="calendar_body_days_day">X</div>
-                    <div class="calendar_body_days_day">J</div>
-                    <div class="calendar_body_days_day">V</div>
-                    <div class="calendar_body_days_day">S</div>
-                    <div class="calendar_body_days_day">D</div>
-                </div>
-                <div class="calendar_body_week">
-                    <div class="calendar_body_week_day">
-                        1
+    <head>
+        <title>JSCalendar by RSginer</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/calendar.css" />
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="container">
+            <button onclick="addMonth()">Añadir Mes</button>
+            <button onclick="subMonth()">Restar Mes</button>
+            <div id="calendar" class="calendar">
+                <div id="header" class="calendar_header">MES</div>
+                <div class="calendar_body">
+                    <div class="calendar_body_days">
+                        <div class="calendar_body_days_day">L</div>
+                        <div class="calendar_body_days_day">M</div>
+                        <div class="calendar_body_days_day">X</div>
+                        <div class="calendar_body_days_day">J</div>
+                        <div class="calendar_body_days_day">V</div>
+                        <div class="calendar_body_days_day">S</div>
+                        <div class="calendar_body_days_day">D</div>
                     </div>
-                    <div class="calendar_body_week_day">
-                        2
-                    </div>
-                    <div class="calendar_body_week_day">
-                        3
-                    </div>
-                    <div class="calendar_body_week_day calendar_body_week_day--current-day">
-                        4
-                    </div>
-                    <div class="calendar_body_week_day">
-                        5
-                    </div>
-                    <div class="calendar_body_week_day">
-                        6
-                    </div>
-                    <div class="calendar_body_week_day">
-                        7
-                    </div>
-                    <div class="calendar_body_week_day">
-                        8
-                    </div>
-                    <div class="calendar_body_week_day">
-                        9
-                    </div>
-                    <div class="calendar_body_week_day">
-                        10
-                    </div>
-                    <div class="calendar_body_week_day">
-                        11
-                    </div>
-                    <div class="calendar_body_week_day">
-                        12
-                    </div>
-                    <div class="calendar_body_week_day">
-                        13
-                    </div>
-                    <div class="calendar_body_week_day">
-                        14
-                    </div>
-                    <div class="calendar_body_week_day">
-                        15
-                    </div>
-                    <div class="calendar_body_week_day">
-                        16
-                    </div>
-                    <div class="calendar_body_week_day">
-                        17
-                    </div>
-                    <div class="calendar_body_week_day">
-                        18
-                    </div>
-                    <div class="calendar_body_week_day">
-                        19
-                    </div>
-                    <div class="calendar_body_week_day">
-                        20
-                    </div>
-                    <div class="calendar_body_week_day">
-                        21
-                    </div>
-                    <div class="calendar_body_week_day">
-                        22
-                    </div>
-                    <div class="calendar_body_week_day">
-                        23
-                    </div>
-                    <div class="calendar_body_week_day">
-                        24
-                    </div>
-                    <div class="calendar_body_week_day">
-                        24
-                    </div>
-                    <div class="calendar_body_week_day">
-                        25
-                    </div>
-                    <div class="calendar_body_week_day">
-                        26
-                    </div>
-                    <div class="calendar_body_week_day">
-                        27
-                    </div>
-                    <div class="calendar_body_week_day">
-                        28
-                    </div>
-                    <div class="calendar_body_week_day">
-                        29
-                    </div>
-                    <div class="calendar_body_week_day">
-                        30
+                    <div class="calendar_body_week">
+                        <div class="calendar_body_week_day">
+                            1
+                        </div>
                     </div>
                 </div>
+                <div class="calendar_footer"></div>
             </div>
-            <div class="calendar_footer"></div>
         </div>
-    </div>
-</body>
+        <script src="js/calendar.js"></script>
+    </body>
 
 </html>
