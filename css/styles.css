@@ -18,3 +18,13 @@ html, body {
     padding: 20px;
     margin-top: 50px;
 }
+
+.right{
+    float:right;
+    margin: 0px;
+    
+}
+.left{
+    float: left;
+    margin:0px;
+}

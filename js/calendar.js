@@ -1,4 +1,5 @@
-date = new Date(new Date().getFullYear(), new Date().getMonth(), 01);
+var today = new Date();
+var date = new Date(today.getFullYear(), today.getMonth(), 01);
 console.log(date);
 initCalendar(date);
 
