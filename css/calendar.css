@@ -7,6 +7,7 @@
 .calendar_header{
     text-align: center;
     font-weight: bold;
+    font-size: 30px;
     background-color:#ededed;
     padding: 5px;
     border-top-left-radius: 10px;
@@ -20,13 +21,14 @@
 }
 
 .calendar_body_days{
-    font-size: 12px;
-
+    background-color:grey;
+    color:white;
+    font-weight: bold;
 }
 
 .calendar_body_days_day{
         display: inline-block;
-        width: 13.70971429%;
+        width: 13.87971429%;
         font-weight: bold;
         text-align: center;
         padding: 5px;
@@ -38,13 +40,13 @@
 
 .calendar_body_week_day{
         display: inline-block;
-        width: 13.51971429%;
+        width: 13.87971429%;
         height: 5%;
         text-align: center;
         padding: 5px;
         border-radius:10px;
         vertical-align: middle;
-        font-size: 11px;
+        font-size: 20px;
 }
 
 .calendar_body_week_day:hover{
@@ -54,6 +56,5 @@
 }
 
 .calendar_body_week_day--current-day{
-    border: 1px solid #FF9292;
     background-color: #FFF5F5;
 }
