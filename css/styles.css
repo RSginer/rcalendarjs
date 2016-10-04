@@ -1,0 +1,21 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+*{
+    
+    box-sizing: border-box;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+}
+
+html, body{
+    margin:0px;
+    padding: 0px;
+    background-color: #CCCCCC;
+}
+
+.container{
+    width:500px;
+    margin:0 auto;
+    background-color: transparent;
+    padding: 20px;
+    margin-top: 50px;
+}
