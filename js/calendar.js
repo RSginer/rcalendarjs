@@ -1,7 +1,6 @@
-var _d = new Date(2016, 10, 01);
-_date = new Date(_d.getYear(), _d.getMonth(), 01);
-console.log(_date)
-initCalendar(_date);
+date = new Date(new Date().getFullYear(), new Date().getMonth(), 01);
+console.log(date);
+initCalendar(date);
 
 function initCalendar(date) {
     var header = document.getElementById("header");
@@ -11,28 +10,28 @@ function initCalendar(date) {
 }
 
 function addMonth() {
-    if (this._date.getMonth() >= 11) {
-        this._date = new Date((this._date.getYear() + 1), 00, 01);
+    if (this.date.getMonth() >= 11) {
+        this.date = new Date((this.date.getFullYear() + 1), 00, 01);
     } else {
-        this._date = new Date(this._date.getYear(), (this._date.getMonth() + 1), 01);
+        this.date = new Date(this.date.getFullYear(), (this.date.getMonth() + 1), 01);
     }
-    initCalendar(this._date);
+    initCalendar(this.date);
 }
 
 function addMonth() {
-    if (this._date.getMonth() >= 11) {
-        this._date = new Date((this._date.getYear() + 1), 00, 01);
+    if (this.date.getMonth() >= 11) {
+        this.date = new Date((this.date.getFullYear() + 1), 00, 01);
     } else {
-        this._date = new Date(this._date.getYear(), (this._date.getMonth() + 1), 01);
+        this.date = new Date(this.date.getFullYear(), (this.date.getMonth() + 1), 01);
     }
-    initCalendar(this._date);
+    initCalendar(this.date);
 }
 
-function subMonth(){
-      if (this._date.getMonth() <= 0) {
-        this._date = new Date((this._date.getYear() - 1), 11, 01);
+function subMonth() {
+    if (this.date.getMonth() <= 0) {
+        this.date = new Date((this.date.getFullYear() - 1), 11, 01);
     } else {
-        this._date = new Date(this._date.getYear(), (this._date.getMonth() - 1), 01);
+        this.date = new Date(this.date.getFullYear(), (this.date.getMonth() - 1), 01);
     }
-    initCalendar(this._date);
+    initCalendar(this.date);
 }
