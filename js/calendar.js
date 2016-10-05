@@ -1,6 +1,5 @@
 var today = new Date();
 var date = new Date(today.getFullYear(), today.getMonth(), 01);
-console.log(date);
 initCalendar(date);
 
 function initCalendar(date) {
@@ -23,9 +22,12 @@ function initCalendar(date) {
     for (var i = 1; i < numBlankDivs; i++) {
         text += '<div class="calendar_body_week_day"></div>';
     }
-    console.log(date.getDay())
     for (var i = 1; i <= monthDays[date.getMonth()]; i++) {
+        if (today.getDate()==i && today.getMonth()==date.getMonth()) {
+            text += '<div class="calendar_body_week_day calendar_body_week_day--current-day">' + i + '</div>';
+        }else{
         text += '<div class="calendar_body_week_day">' + i + '</div>';
+        }
     }
 
     body.innerHTML = text;

@@ -8,10 +8,10 @@
 .calendar_header{
     text-align: center;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 35px;
     color:white;
     background-color:orange;
-    padding: 5px;
+    padding: 3px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -48,8 +48,8 @@
     display: inline-block;
     width: 100px;
     float: left;
-    line-height: 80px;
-    height: 100px;
+    line-height: 40px;
+    height: 60px;
     text-align: center;
     padding: 5px;
     border-radius:10px;
@@ -64,9 +64,13 @@
 }
 
 .calendar_body_week_day--current-day{
-    background-color: #FFF5F5;
+    background-color: #fcd58c;
+    color:white;
 }
-
+.calendar_body_week_day--current-day:hover{
+    background-color: #fcd58c;
+    color:black;
+}
 .btn{
     color: white;
     background-color: orange;
