@@ -1,14 +1,16 @@
 .calendar{
     width:702px;
-    border:1px solid black;
+    border:1px solid #dc8f00;
     border-radius: 10px;
+    box-shadow: 5px 10px 40px 0px green;
 }
 
 .calendar_header{
     text-align: center;
     font-weight: bold;
     font-size: 40px;
-    background-color:#ededed;
+    color:white;
+    background-color:orange;
     padding: 5px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -23,7 +25,7 @@
 }
 
 .calendar_body_days{
-    background-color:grey;
+    background-color:orangered;
     color:white;
     display: inline;
     font-weight: bold;
@@ -66,24 +68,26 @@
 }
 
 .btn{
-    color: #000;
-    background-color: #ededed;
-    border-color: #000;
+    color: white;
+    background-color: orange;
     display: inline-block;
     padding: 6px 12px;
     margin:10px;
     font-size: 14px;
-    border:1px solid;
-    font-weight: 400;
+    border:1px solid #dc8f00;
+    box-shadow: 0px 20px 60px -3px orangered;
+    font-weight: bold;
     line-height: 1.42857143;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
     border-radius: 4px;
+    
 }
 .btn:hover{
-    background-color: #CCCCCC;
+    background-color: orangered;
+    
 }
 .btn_add-month{
   

@@ -1,5 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
-
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';
 *{
     box-sizing: border-box;
     font-family: Raleway, Arial, Helvetica, sans-serif;
@@ -8,23 +8,36 @@
 html, body {
     margin:0px;
     padding: 0px;
-    background-color: #CCCCCC;
+    background-color: greenyellow;
 }
 
 .container{
     width:740px;
     margin:0 auto;
-    background-color: transparent;
     padding: 20px;
     margin-top: 50px;
+    
 }
 
 .right{
     float:right;
     margin: 0px;
-    
+
 }
 .left{
     float: left;
     margin:0px;
+}
+.credits{
+    padding:20px;
+    text-align: center;
+}
+.credits > i{
+    font-size: 40px;
+    color:black;
+}
+
+.credits > a{
+    text-decoration: none;
+    color:blue;
 }

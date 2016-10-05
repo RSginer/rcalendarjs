@@ -9,25 +9,26 @@ function initCalendar(date) {
     var days = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
     var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
     header.innerHTML = months[date.getMonth()] + " - " + date.getFullYear();
-    var monthDays = [31,28,31,30,31,30,31,31,30,31,30,31]
+    var monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     if (isLeap(date.getFullYear())) {
-        monthDays[1]=29;
+        monthDays[1] = 29;
     }
-    var text="";
-    for (var i = 1; i <= monthDays[date.getMonth()]; i++) {
-       text += '<div class="calendar_body_week_day">'+i+'</div>';
-    }
-    
-    body.innerHTML = text;
-}
-
-function addMonth() {
-    if (this.date.getMonth() >= 11) {
-        this.date = new Date((this.date.getFullYear() + 1), 00, 01);
+    var text = "";
+    var numBlankDivs;
+    if (date.getDay() != 0) {
+        numBlankDivs = date.getDay();
     } else {
-        this.date = new Date(this.date.getFullYear(), (this.date.getMonth() + 1), 01);
+        numBlankDivs = 7;
     }
-    initCalendar(this.date);
+    for (var i = 1; i < numBlankDivs; i++) {
+        text += '<div class="calendar_body_week_day"></div>';
+    }
+    console.log(date.getDay())
+    for (var i = 1; i <= monthDays[date.getMonth()]; i++) {
+        text += '<div class="calendar_body_week_day">' + i + '</div>';
+    }
+
+    body.innerHTML = text;
 }
 
 function addMonth() {
@@ -48,6 +49,6 @@ function subMonth() {
     initCalendar(this.date);
 }
 
-function isLeap(year){
-return ((year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0)));
+function isLeap(year) {
+    return ((year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0)));
 }
