@@ -7,8 +7,8 @@
     </head>
     <body>
         <div class="container">
-            <button class="show" onclick="show()"><i class="fa fa-calendar"></i> Calendario</button>
-            <div id="content-calendar" class="content-calendar" style="display:none">
+            <button class="show-button" onclick="show()"><i class="fa fa-calendar"></i> Calendario</button><span id="info-message" class="info-message"><i class="fa fa-reply"></i> Click para mostrar </span>
+            <div id="content-calendar" class="content-calendar hide">
                 <div class="right"><button class="btn btn__add-month" onclick="addMonth()">Siguiente</button></div>
                 <div class="left"><button class="btn btn__sub-month" onclick="subMonth()">Anterior</button></div>  <br>
                 <div id="calendar" class="calendar">
@@ -26,8 +26,6 @@
                         <div id="body" class="calendar__week">
                         </div>
                     </div>
-                    <div class="calendar__footer">
-                    </div>
                 </div>
             </div>
             <br>
@@ -37,9 +35,7 @@
             </span>
             <br>
             <br>
-
         </div>
         <script src="js/calendar.js"></script>
     </body>
-
 </html>

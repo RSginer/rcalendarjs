@@ -42,20 +42,3 @@ html, body {
     color:blue;
 }
 
-.show{
-     color: white;
-    background-color: orange;
-    display: inline-block;
-    padding: 10px 32px;
-    margin:10px;
-    font-size: 14px;
-    border:1px solid #dc8f00;
-    font-weight: bold;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    box-shadow: 5px 3px 20px 0px green;
-    border-radius: 4px;
-}

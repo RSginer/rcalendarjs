@@ -1,3 +1,4 @@
+var showOrHide = false;
 var today = new Date();
 var date = new Date(today.getFullYear(), today.getMonth(), 01);
 initCalendar(date);
@@ -23,10 +24,10 @@ function initCalendar(date) {
         text += '<div class="calendar__week__day"></div>';
     }
     for (var i = 1; i <= monthDays[date.getMonth()]; i++) {
-        if (today.getDate()==i && today.getMonth()==date.getMonth()) {
+        if (today.getDate() == i && today.getMonth() == date.getMonth()) {
             text += '<div class="calendar__week__day calendar__week__day--current-day">' + i + '</div>';
-        }else{
-        text += '<div class="calendar__week__day">' + i + '</div>';
+        } else {
+            text += '<div class="calendar__week__day">' + i + '</div>';
         }
     }
 
@@ -55,6 +56,13 @@ function isLeap(year) {
     return ((year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0)));
 }
 
-function show(){
-    document.getElementById("content-calendar").style="display:block";
+function show() {
+    if (this.showOrHide == true) {
+        document.getElementById("content-calendar").style = "visibility:hidden";
+        this.showOrHide=false;
+    } else {
+        document.getElementById("content-calendar").style = "visibility:visible";
+        this.showOrHide=true;
+        document.getElementById("info-message").innerHTML = '<span id="info-message" class="info-message"><i class="fa fa-reply"></i> Click para ocultar</span>'
+    }
 }
