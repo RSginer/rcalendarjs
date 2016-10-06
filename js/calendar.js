@@ -20,13 +20,13 @@ function initCalendar(date) {
         numBlankDivs = 7;
     }
     for (var i = 1; i < numBlankDivs; i++) {
-        text += '<div class="calendar_body_week_day"></div>';
+        text += '<div class="calendar__body__week__day"></div>';
     }
     for (var i = 1; i <= monthDays[date.getMonth()]; i++) {
         if (today.getDate()==i && today.getMonth()==date.getMonth()) {
-            text += '<div class="calendar_body_week_day calendar_body_week_day--current-day">' + i + '</div>';
+            text += '<div class="calendar__body__week__day calendar__body__week__day--current-day">' + i + '</div>';
         }else{
-        text += '<div class="calendar_body_week_day">' + i + '</div>';
+        text += '<div class="calendar__body__week__day">' + i + '</div>';
         }
     }
 

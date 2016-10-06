@@ -5,7 +5,7 @@
     box-shadow: 5px 10px 40px 0px green;
 }
 
-.calendar_header{
+.calendar__header{
     text-align: center;
     font-weight: bold;
     font-size: 35px;
@@ -16,7 +16,7 @@
     border-top-right-radius: 10px;
 }
 
-.calendar_body{
+.calendar__body{
     background-color:#FFFFFF;
     width: 100%;
     border-bottom-left-radius: 10px;
@@ -24,14 +24,14 @@
     display:block;
 }
 
-.calendar_body_days{
+.calendar__body__days{
     background-color:orangered;
     color:white;
     display: inline;
     font-weight: bold;
 }
 
-.calendar_body_days_day{
+.calendar__body__days__day{
     display: inline-block;
     width: 96.5156px;
     font-weight: bold;
@@ -39,12 +39,12 @@
    
 }
 
-.calendar_body_week{
+.calendar__body__week{
     width: 100%;
     display: inline-block;
 }
 
-.calendar_body_week_day{
+.calendar__body__week__day{
     display: inline-block;
     width: 100px;
     float: left;
@@ -57,17 +57,17 @@
     font-size: 30px;
 }
 
-.calendar_body_week_day:hover{
+.calendar__body__week__day:hover{
     background-color: #FFEC92;
     font-weight: bold;
     cursor:pointer;
 }
 
-.calendar_body_week_day--current-day{
+.calendar__body__week__day--current-day{
     background-color: #fcd58c;
     color:white;
 }
-.calendar_body_week_day--current-day:hover{
+.calendar__body__week__day--current-day:hover{
     background-color: #fcd58c;
     color:black;
 }
@@ -93,15 +93,15 @@
     background-color: orangered;
     
 }
-.btn_add-month{
+.btn__add-month{
   
 }
-.btn_sub-month{
+.btn__sub-month{
     
 }
-.btn_add-month:after{
+.btn__add-month:after{
     content: ' >>';
 }
-.btn_sub-month:before{
+.btn__sub-month:before{
     content: '<< ';
 }
