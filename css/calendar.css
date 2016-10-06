@@ -62,6 +62,10 @@
     font-weight: bold;
     cursor:pointer;
 }
+.calendar__week__day:empty:hover{
+    background-color:#FFFFFF;
+    cursor:initial;
+}
 
 .calendar__week__day--current-day{
     background-color: #fcd58c;
@@ -87,7 +91,6 @@
     vertical-align: middle;
     cursor: pointer;
     border-radius: 4px;
-    
 }
 .btn:hover{
     background-color: orangered;
