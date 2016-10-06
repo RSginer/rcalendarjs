@@ -12,8 +12,8 @@
     color:white;
     background-color:orange;
     padding: 3px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
 }
 
 .calendar__body{
@@ -27,7 +27,7 @@
 .calendar__days{
     background-color:orangered;
     color:white;
-    display: inline;
+    display: block;
     font-weight: bold;
 }
 
@@ -36,7 +36,7 @@
     width: 98.8156px;
     font-weight: bold;
     text-align: center;
-   
+
 }
 
 .calendar__week{
@@ -99,10 +99,10 @@
     background-color: orangered;
 }
 .btn__add-month{
-  
+
 }
 .btn__sub-month{
-    
+
 }
 .btn__add-month:after{
     content: ' >>';
@@ -110,22 +110,10 @@
 .btn__sub-month:before{
     content: '<< ';
 }
-.show-button{
-    color: white;
-    background-color: orange;
-    display: inline-block;
+.btn--show{
     padding: 10px 32px;
     margin:10px;
-    font-size: 14px;
-    border:1px solid #dc8f00;
-    font-weight: bold;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
     box-shadow: 5px 3px 20px 0px green;
-    border-radius: 4px;
     margin-left:160px;
 }
 .show-button:hover{
@@ -142,7 +130,15 @@
 .hide{
     visibility: hidden;
 }
+.right{
+    float:right;
+    margin: 0px;
 
+}
+.left{
+    float: left;
+    margin:0px;
+}
 .info-message {
     font-size: 25px;
     position: relative;

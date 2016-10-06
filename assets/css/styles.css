@@ -1,5 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';
+@import "calendar.css";
+
 *{
     box-sizing: border-box;
     font-family: Raleway, Arial, Helvetica, sans-serif;
@@ -14,31 +16,28 @@ html, body {
 .container{
     width:740px;
     margin:0 auto;
+    height:600px;
     padding: 20px;
     margin-top: 10px;
-    
-}
-
-.right{
-    float:right;
-    margin: 0px;
 
 }
-.left{
-    float: left;
-    margin:0px;
-}
+
 .credits{
-    padding:20px;
+    padding:5px;
     text-align: center;
+    position:fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    width:100%;
+    bottom:0;
+    font-size: 20px;
+    color:white;
 }
 .credits > i{
-    font-size: 40px;
-    color:black;
+    font-size: 50px;
+    color:white;
 }
 
 .credits > a{
     text-decoration: none;
-    color:blue;
+    color:turquoise;
 }
-
