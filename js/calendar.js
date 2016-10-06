@@ -4,6 +4,25 @@ var date = new Date(today.getFullYear(), today.getMonth(), 01);
 initCalendar(date);
 
 function initCalendar(date) {
+    document.getElementById("content-calendar").innerHTML=
+            '<div class="right"><button class="btn btn__add-month" onclick="addMonth()">Siguiente</button></div>'+
+                '<div class="left"><button class="btn btn__sub-month" onclick="subMonth()">Anterior</button></div>  <br>'+
+                '<div id="calendar" class="calendar">'+
+                    '<div id="header" class="calendar__header">MES</div>' +
+                    '<div class="calendar__body">'+
+                       ' <div class="calendar__days">'+
+                            '<div class="calendar__day">L</div>'+
+                            '<div class="calendar__day">M</div>'+
+                           ' <div class="calendar__day">X</div>'+
+                            '<div class="calendar__day">J</div>'+
+                            '<div class="calendar__day">V</div>'+
+                            '<div class="calendar__day">S</div>'+
+                           ' <div class="calendar__day">D</div>'+
+                       ' </div>'+
+                        '<div id="body" class="calendar__week">'+
+                       ' </div>'+
+                   ' </div>'+
+                '</div>';
     var header = document.getElementById("header");
     var body = document.getElementById("body");
     var days = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
