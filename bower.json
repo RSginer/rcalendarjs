@@ -1,0 +1,14 @@
+{
+  "name": "rcalendarjs",
+  "version": "1.0.4",
+  "description": "Javascript calendar",
+  "homepage": "https://github.com/rsginer/rcalendarjs",
+  "authors": [
+    "Rubén Soler"
+  ],
+  "main": "index.html",
+  "keywords": [
+    "calendar"
+  ],
+  "license": "MIT",
+}
