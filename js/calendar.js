@@ -43,7 +43,7 @@ function initCalendar(date) {
         text += '<div class="calendar__week__day"></div>';
     }
     for (var i = 1; i <= monthDays[date.getMonth()]; i++) {
-        if (today.getDate() == i && today.getMonth() == date.getMonth()) {
+        if (today.getDate() == i && today.getMonth() == date.getMonth() && today.getFullYear()==date.getFullYear()) {
             text += '<div class="calendar__week__day calendar__week__day--current-day">' + i + '</div>';
         } else {
             text += '<div class="calendar__week__day">' + i + '</div>';

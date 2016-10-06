@@ -93,8 +93,10 @@
     border-radius: 4px;
 }
 .btn:hover{
+    background-color: #ff7200;
+}
+.btn:active{
     background-color: orangered;
-    
 }
 .btn__add-month{
   
@@ -109,7 +111,7 @@
     content: '<< ';
 }
 .show-button{
-     color: white;
+    color: white;
     background-color: orange;
     display: inline-block;
     padding: 10px 32px;
@@ -125,6 +127,13 @@
     box-shadow: 5px 3px 20px 0px green;
     border-radius: 4px;
     margin-left:160px;
+}
+.show-button:hover{
+    background-color: #ff7200;
+}
+
+.show-button:active{
+    background-color: orangered;
 }
 .show{
     visibility: visible;
