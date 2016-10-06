@@ -60,9 +60,10 @@ function show() {
     if (this.showOrHide == true) {
         document.getElementById("content-calendar").style = "visibility:hidden";
         this.showOrHide=false;
+        document.getElementById("info-message").innerHTML = '<i class="fa fa-reply"></i> Click para mostrar';
     } else {
         document.getElementById("content-calendar").style = "visibility:visible";
         this.showOrHide=true;
-        document.getElementById("info-message").innerHTML = '<span id="info-message" class="info-message"><i class="fa fa-reply"></i> Click para ocultar</span>'
+        document.getElementById("info-message").innerHTML = '<i class="fa fa-reply"></i> Click para ocultar';
     }
 }
