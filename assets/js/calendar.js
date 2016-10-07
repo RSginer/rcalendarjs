@@ -2,7 +2,7 @@ var showOrHide = false;
 var today = new Date();
 var date = new Date(today.getFullYear(), today.getMonth(), 01);
 
-/*Localizo el elemento personalizado <rcalendar/> y le añado los contenedores y el boton*/
+/* Localizo el elemento personalizado <rcalendar/> y le añado los contenedores y el boton*/
 document.getElementsByTagName("rcalendar")[0].innerHTML =
         '<button class="btn btn--show" onclick="show()"><i class="fa fa-calendar"></i> Calendario</button>' +
         '<span id="info-message" class="info-message"><i class="fa fa-reply"></i> Click para mostrar </span>' +
@@ -11,6 +11,7 @@ document.getElementsByTagName("rcalendar")[0].innerHTML =
 initCalendar(date);
 
 function initCalendar(date) {
+    
     /* Añado el contenido estatico al calendario*/
     document.getElementById("content-calendar").innerHTML =
             '<div id="calendar" class="calendar ">' +
@@ -42,12 +43,16 @@ function initCalendar(date) {
     var numAddDays = date.getDay() - 1;
 
     header.innerHTML = '<span class="animated">' + months[date.getMonth()] + " - " + date.getFullYear()+'</span>';
-    // Compruebo si el año es bisiesto
+    
+    // Si el año es bisiesto febrero tiene 29 dias
     if (isLeap(date.getFullYear())) {
         monthDays[1] = 29;
     }
-    // Compruebo cuando empieza el mes para despues calcular donde colocar los divs 'numBlankDivs' y en que numero acabar los dias del
-    // mes anterior 'numAddDays'
+    
+    /* 
+     * Compruebo cuando empieza el mes para despues calcular donde colocar los dias del mes anterior (@param numBlankDivs) 
+     * y en que numero acabar los dias del mes siguiente (@param numAddDays) 
+     * */
     if (date.getDay() != 0) {
         numBlankDivs = date.getDay();
     } else {
@@ -58,11 +63,14 @@ function initCalendar(date) {
         beforeMonth = 11;
     }
 
-    /* añado los dias del mes anterior para completar la semana*/
+    /* Añado los dias del mes anterior para completar la semana ¿Porqué sumo dos? Solo dios lo sabe... prueba-error 
+     * ¡NO TOCAR EL +2!
+     * */
     for (var i = (monthDays[beforeMonth] - numBlankDivs) + 2; i <= monthDays[beforeMonth]; i++) {
         text += '<div class="calendar__week__day calendar__week__day--disabled">' + i + '</div>';
     }
-    /* añado los dias de este mes*/
+    
+    /* Añado los dias de este mes*/
     for (var i = 1; i <= monthDays[date.getMonth()]; i++) {
         if (today.getDate() == i && today.getMonth() == date.getMonth() && today.getFullYear() == date.getFullYear()) {
             text += '<div class="calendar__week__day calendar__week__day--current-day">' + i + '</div>';
@@ -70,7 +78,8 @@ function initCalendar(date) {
             text += '<div class="calendar__week__day">' + i + '</div>';
         }
     }
-    /*añado los dias del siguiente mes para completar la semana*/
+    
+    /* Añado los dias del siguiente mes para completar la semana*/
     for (var i = 1; i <= (42 - monthDays[date.getMonth()] - numAddDays); i++) {
         text += '<div class="calendar__week__day calendar__week__day--disabled">' + i + '</div>';
     }
@@ -88,6 +97,7 @@ function addMonth() {
     }
     initCalendar(this.date);
 }
+
 /*
  * Resta un mes a la fecha y pinta de nuevo el calendario
  */
@@ -99,13 +109,15 @@ function subMonth() {
     }
     initCalendar(this.date);
 }
+
 /*
  * Comprueba si el año es bisiesto
  */
 function isLeap(year) {
     return ((year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0)));
 }
-/*Muestra o oculta el calendario*/
+
+/* Muestra u oculta el calendario */
 function show() {
     if (this.showOrHide == true) {
         document.getElementById("content-calendar").className="content-calendar__animated--hide";
