@@ -63,10 +63,11 @@ function initCalendar(date) {
         beforeMonth = 11;
     }
 
-    /* Añado los dias del mes anterior para completar la semana ¿Porqué sumo dos? Solo dios lo sabe... prueba-error 
-     * ¡NO TOCAR EL +2!
+    /* Añado los dias del mes anterior para completar la semana 
+     * Lo que hago es inicializar la i con el ultimo dia del mes anterior - el dia de la semana + 1
+     * porque como empieza en 0
      * */
-    for (var i = (monthDays[beforeMonth] - numBlankDivs) + 2; i <= monthDays[beforeMonth]; i++) {
+    for (var i = (monthDays[beforeMonth] - numBlankDivs) + 1; i < monthDays[beforeMonth]; i++) {
         text += '<div class="calendar__week__day calendar__week__day--disabled">' + i + '</div>';
     }
     
@@ -79,7 +80,9 @@ function initCalendar(date) {
         }
     }
     
-    /* Añado los dias del siguiente mes para completar la semana*/
+    /* Añado los dias del siguiente mes para completar el calendario
+     * 
+     * */
     for (var i = 1; i <= (42 - monthDays[date.getMonth()] - numAddDays); i++) {
         text += '<div class="calendar__week__day calendar__week__day--disabled">' + i + '</div>';
     }
