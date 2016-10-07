@@ -2,7 +2,8 @@
     width:702px;
     margin-top: 50px;
     border:1px solid #dc8f00;
-    background-color: #fff; 
+    height: 428px !important;
+    background-color: white;
     background-size: 100% 1.2em;
     border-radius: 10px;
     box-shadow: 5px 10px 40px 0px green;
@@ -20,7 +21,6 @@
 }
 
 .calendar__body{
-    background-color:#FFFFFF;
     width: 100%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -43,17 +43,41 @@
 }
 
 .calendar__week{
+    background-color: white;
     width: 100%;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
     display: inline-block;
 }
 
 @keyframes anim{
-    from{opacity:0;}
-    to{opacity:1;}
+    from{opacity:0;
+         transform:rotateZ(-45deg);
+         margin-top: 60%;
+         ;
+    }
+    to{opacity:1;
+       margin-bottom: 0px;
+
+    }
 }
 .animated{
     animation-name: anim;
-    animation-duration: 2s;
+    animation-duration: 0.3s;
+}
+
+@keyframes anim-hide{
+    from{opacity:1;;
+    }
+       to{opacity:0;
+       transform:rotateZ(45deg);
+       margin-top:60%;
+    }
+}
+.animated--hide{
+    opacity: 0;
+    animation-name: anim-hide;
+    animation-duration: 0.2s;
 }
 .calendar__week__day{
     display: inline-block;
@@ -130,7 +154,7 @@
 .btn--show{
     padding: 10px 32px;
     margin:10px;
-    box-shadow: 5px 3px 20px 0px green;
+    box-shadow: 5px 6px 20px 0px green;
     margin-left:160px;
 }
 .show-button:hover{
@@ -156,8 +180,14 @@
 }
 
 @keyframes hide{
-    from{opacity:1;visibility:visible;}
-    to{opacity:0;visibility:hidden;}
+    from{
+        opacity:1;
+        visibility:visible;
+    }
+    to{
+        opacity:0;
+        visibility:hidden;
+        ;}
 }
 .content-calendar__animated--hide{
     animation-name: hide;

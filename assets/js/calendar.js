@@ -17,7 +17,7 @@ function initCalendar(date) {
             '<div id="calendar" class="calendar ">' +
             '<div class="right"><button class="btn btn--add-month" onclick="addMonth()"></button></div>' +
             '<div class="left"><button class="btn btn--sub-month" onclick="subMonth()"></button></div>' +
-            '<div id="header" class="calendar__header"><span class="animated">MES</span></div>' +
+            '<div id="header" class="calendar__header">MES</div>' +
             '<div class="calendar__body ">' +
             '<div class="calendar__days">' +
             '<div class="calendar__day">L</div>' +
@@ -41,8 +41,7 @@ function initCalendar(date) {
     var numBlankDivs;
     var beforeMonth = date.getMonth() - 1;
     var numAddDays = date.getDay() - 1;
-
-    header.innerHTML = '<span class="animated">' + months[date.getMonth()] + " - " + date.getFullYear()+'</span>';
+    header.innerHTML = months[date.getMonth()] + " - " + date.getFullYear();
     
     // Si el año es bisiesto febrero tiene 29 dias
     if (isLeap(date.getFullYear())) {
@@ -100,7 +99,8 @@ function addMonth() {
     } else {
         this.date = new Date(this.date.getFullYear(), (this.date.getMonth() + 1), 01);
     }
-    initCalendar(this.date);
+    document.getElementById("body").className+=" animated--hide";
+    setTimeout(function(){ initCalendar(this.date); }, 300);
 }
 
 /*
@@ -112,7 +112,8 @@ function subMonth() {
     } else {
         this.date = new Date(this.date.getFullYear(), (this.date.getMonth() - 1), 01);
     }
-    initCalendar(this.date);
+     document.getElementById("body").className+=" animated--hide";
+    setTimeout(function(){ initCalendar(this.date); }, 200);
 }
 
 /*
