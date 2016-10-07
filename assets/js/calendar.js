@@ -66,7 +66,7 @@ function initCalendar(date) {
     /* Añado los dias del mes anterior para completar la semana 
      * Lo que hago es inicializar la i con el ultimo dia del mes anterior - el dia de la semana + 2
      * Porque el dia de la semana va de 0 a 6 si es sabado es 6+2=8 si el mes anterior tiene 30 dias -8 
-     * son 23 entonces contara 24, 25, 26, 27,28,29 que son 6 divs a añadir,
+     * son 23 entonces contara 24, 25, 26, 27,28,29 que son 6 divs a añadir.
      * 
      * */
     for (var i = (monthDays[beforeMonth] - numBlankDivs) +2; i <= monthDays[beforeMonth]; i++) {
