@@ -10,7 +10,7 @@
 html, body {
     margin:0px;
     padding: 0px;
-    background-color: greenyellow;
+    background: url('http://api.thumbr.it/whitenoise-361x370.png?background=adff20ff&noise=626262&density=100&opacity=18');
 }
 
 .container{

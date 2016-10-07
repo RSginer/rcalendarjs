@@ -4,7 +4,7 @@ var date = new Date(today.getFullYear(), today.getMonth(), 01);
 
 /*Localizo el elemento personalizado <rcalendar/> y le añado los contenedores y el boton*/
 document.getElementsByTagName("rcalendar")[0].innerHTML =
-        '<button class="btn btn--show" onclick="show()"><i class="fa fa-calendar"></i> Calendario</button>'+
+        '<button class="btn btn--show" onclick="show()"><i class="fa fa-calendar"></i> Calendario</button>' +
         '<span id="info-message" class="info-message"><i class="fa fa-reply"></i> Click para mostrar </span>' +
         '<div id="content-calendar" class="hide"></div>';
 
@@ -13,10 +13,10 @@ initCalendar(date);
 function initCalendar(date) {
     /* Añado el contenido estatico al calendario*/
     document.getElementById("content-calendar").innerHTML =
-            '<div class="right"><button class="btn btn__add-month" onclick="addMonth()">Siguiente</button></div>' +
-            '<div class="left"><button class="btn btn__sub-month" onclick="subMonth()">Anterior</button></div>  <br>' +
             '<div id="calendar" class="calendar ">' +
-            '<div id="header" class="calendar__header">MES</div>' +
+            '<div class="right"><button class="btn btn--add-month" onclick="addMonth()"></button></div>' +
+            '<div class="left"><button class="btn btn--sub-month" onclick="subMonth()"></button></div>' +
+            '<div id="header" class="calendar__header"><span class="animated">MES</span></div>' +
             '<div class="calendar__body ">' +
             '<div class="calendar__days">' +
             '<div class="calendar__day">L</div>' +
@@ -31,17 +31,17 @@ function initCalendar(date) {
             '</div>' +
             '</div>' +
             '</div>';
-    
+
     var header = document.getElementById("header");
     var body = document.getElementById("body");
     var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
     var monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     var text = "";
     var numBlankDivs;
-    var beforeMonth = date.getMonth()-1;
-    var numAddDays =date.getDay()-1;
-    
-    header.innerHTML = months[date.getMonth()] + " - " + date.getFullYear();
+    var beforeMonth = date.getMonth() - 1;
+    var numAddDays = date.getDay() - 1;
+
+    header.innerHTML = '<span class="animated">' + months[date.getMonth()] + " - " + date.getFullYear()+'</span>';
     // Compruebo si el año es bisiesto
     if (isLeap(date.getFullYear())) {
         monthDays[1] = 29;
@@ -52,15 +52,15 @@ function initCalendar(date) {
         numBlankDivs = date.getDay();
     } else {
         numBlankDivs = 7;
-        numAddDays = date.getDay()+6;
+        numAddDays = date.getDay() + 6;
     }
-    if (date.getMonth()==0) {
-        beforeMonth=11;
+    if (date.getMonth() == 0) {
+        beforeMonth = 11;
     }
 
     /* añado los dias del mes anterior para completar la semana*/
-    for (var i = (monthDays[beforeMonth]-numBlankDivs)+2; i <=  monthDays[beforeMonth]; i++) {
-        text += '<div class="calendar__week__day calendar__week__day--before">'+i+'</div>';
+    for (var i = (monthDays[beforeMonth] - numBlankDivs) + 2; i <= monthDays[beforeMonth]; i++) {
+        text += '<div class="calendar__week__day calendar__week__day--disabled">' + i + '</div>';
     }
     /* añado los dias de este mes*/
     for (var i = 1; i <= monthDays[date.getMonth()]; i++) {
@@ -71,8 +71,8 @@ function initCalendar(date) {
         }
     }
     /*añado los dias del siguiente mes para completar la semana*/
-      for (var i = 1; i <=  (42-monthDays[date.getMonth()]-numAddDays); i++) {
-        text += '<div class="calendar__week__day calendar__week__day--before">'+i+'</div>';
+    for (var i = 1; i <= (42 - monthDays[date.getMonth()] - numAddDays); i++) {
+        text += '<div class="calendar__week__day calendar__week__day--disabled">' + i + '</div>';
     }
 
     body.innerHTML = text;
@@ -108,11 +108,11 @@ function isLeap(year) {
 /*Muestra o oculta el calendario*/
 function show() {
     if (this.showOrHide == true) {
-        document.getElementById("content-calendar").style = "visibility:hidden";
+        document.getElementById("content-calendar").className="content-calendar__animated--hide";
         this.showOrHide = false;
         document.getElementById("info-message").innerHTML = '<i class="fa fa-reply"></i> Click para mostrar';
     } else {
-        document.getElementById("content-calendar").style = "visibility:visible";
+        document.getElementById("content-calendar").className="content-calendar__animated--show";
         this.showOrHide = true;
         document.getElementById("info-message").innerHTML = '<i class="fa fa-reply"></i> Click para ocultar';
     }
