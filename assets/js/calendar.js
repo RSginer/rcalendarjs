@@ -43,14 +43,16 @@ function initCalendar(date) {
     if (isLeap(date.getFullYear())) {
         monthDays[1] = 29;
     }
-
+        var numAddDays;
     if (date.getDay() != 0) {
         numBlankDivs = date.getDay();
+        numAddDays = date.getDay()-1;
     } else {
         numBlankDivs = 7;
+        numAddDays = date.getDay();
     }
-    for (var i = 1; i < numBlankDivs; i++) {
-        text += '<div class="calendar__week__day"></div>';
+    for (var i = (monthDays[date.getMonth()-1]-numBlankDivs)+2; i <=  monthDays[date.getMonth()-1]; i++) {
+        text += '<div class="calendar__week__day calendar__week__day--before">'+i+'</div>';
     }
     for (var i = 1; i <= monthDays[date.getMonth()]; i++) {
         if (today.getDate() == i && today.getMonth() == date.getMonth() && today.getFullYear() == date.getFullYear()) {
@@ -58,6 +60,9 @@ function initCalendar(date) {
         } else {
             text += '<div class="calendar__week__day">' + i + '</div>';
         }
+    }
+      for (var i = 1; i <=  (42-monthDays[date.getMonth()]-numAddDays); i++) {
+        text += '<div class="calendar__week__day calendar__week__day--before">'+i+'</div>';
     }
 
     body.innerHTML = text;

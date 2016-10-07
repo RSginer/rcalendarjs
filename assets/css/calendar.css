@@ -74,7 +74,12 @@
     background-color:#FFFFFF;
     cursor:initial;
 }
-
+.calendar__week__day--before{
+    color:#CCC;
+    background-color:#FFFFFF !important;
+    cursor:initial !important;
+    font-weight: normal !important;
+}
 .calendar__week__day--current-day{
     background-color: #fcd58c;
     color:white;
