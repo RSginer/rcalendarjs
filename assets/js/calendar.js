@@ -15,8 +15,8 @@ function initCalendar(date) {
             '<div class="right"><button class="btn btn__add-month" onclick="addMonth()">Siguiente</button></div>' +
             '<div class="left"><button class="btn btn__sub-month" onclick="subMonth()">Anterior</button></div>  <br>' +
             '<div id="calendar" class="calendar ">' +
-            '<div id="header" class="calendar__header"><span class="animated">MES</span></div>' +
-            '<div class="calendar__body animated">' +
+            '<div id="header" class="calendar__header">MES</div>' +
+            '<div class="calendar__body ">' +
             '<div class="calendar__days">' +
             '<div class="calendar__day">L</div>' +
             '<div class="calendar__day">M</div>' +
@@ -26,7 +26,7 @@ function initCalendar(date) {
             '<div class="calendar__day">S</div>' +
             '<div class="calendar__day">D</div>' +
             '</div>' +
-            '<div id="body" class="calendar__week ">' +
+            '<div id="body" class="calendar__week animated">' +
             '</div>' +
             '</div>' +
             '</div>';
@@ -38,7 +38,7 @@ function initCalendar(date) {
     var text = "";
     var numBlankDivs;
     
-    header.innerHTML = '<span class="animated">' + months[date.getMonth()] + " - " + date.getFullYear()+'</span>';
+    header.innerHTML = months[date.getMonth()] + " - " + date.getFullYear();
 
     if (isLeap(date.getFullYear())) {
         monthDays[1] = 29;
