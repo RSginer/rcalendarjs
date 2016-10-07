@@ -1,3 +1,4 @@
+[![GitHub version](https://badge.fury.io/gh/rsginer%2Frcalendarjs.svg)](https://badge.fury.io/gh/rsginer%2Frcalendarjs)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/RSginer/rcalendarjs/blob/master/LICENSE.md)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/RSginer/rcalendarjs/blob/master/LICENSE.md)
 
