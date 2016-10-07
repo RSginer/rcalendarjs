@@ -100,7 +100,7 @@ function addMonth() {
         this.date = new Date(this.date.getFullYear(), (this.date.getMonth() + 1), 01);
     }
     document.getElementById("body").className+=" animated--hide";
-    setTimeout(function(){ initCalendar(this.date); }, 300);
+    setTimeout(function(){ initCalendar(this.date); }, 200);
 }
 
 /*
