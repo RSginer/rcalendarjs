@@ -50,7 +50,7 @@
 }
 .animated{
     animation-name: anim;
-    animation-duration: 2s;
+    animation-duration: 3s;
 }
 .calendar__week__day{
     display: inline-block;

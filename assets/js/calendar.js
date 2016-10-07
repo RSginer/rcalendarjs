@@ -1,6 +1,7 @@
 var showOrHide = false;
 var today = new Date();
 var date = new Date(today.getFullYear(), today.getMonth(), 01);
+
 /*Localizo el elemento personalizado <rcalendar/> y le añado los contenedores y el boton*/
 document.getElementsByTagName("rcalendar")[0].innerHTML =
         '<button class="btn btn--show" onclick="show()"><i class="fa fa-calendar"></i> Calendario</button>'+
@@ -37,7 +38,9 @@ function initCalendar(date) {
     var monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     var text = "";
     var numBlankDivs;
-    var numAddDays;
+    var beforeMonth = date.getMonth()-1;
+    var numAddDays =date.getDay()-1;
+    
     header.innerHTML = months[date.getMonth()] + " - " + date.getFullYear();
     // Compruebo si el año es bisiesto
     if (isLeap(date.getFullYear())) {
@@ -47,13 +50,16 @@ function initCalendar(date) {
     // mes anterior 'numAddDays'
     if (date.getDay() != 0) {
         numBlankDivs = date.getDay();
-        numAddDays = date.getDay()-1;
     } else {
         numBlankDivs = 7;
-        numAddDays = date.getDay();
+        numAddDays = date.getDay()+6;
     }
+    if (date.getMonth()==0) {
+        beforeMonth=11;
+    }
+
     /* añado los dias del mes anterior para completar la semana*/
-    for (var i = (monthDays[date.getMonth()-1]-numBlankDivs)+2; i <=  monthDays[date.getMonth()-1]; i++) {
+    for (var i = (monthDays[beforeMonth]-numBlankDivs)+2; i <=  monthDays[beforeMonth]; i++) {
         text += '<div class="calendar__week__day calendar__week__day--before">'+i+'</div>';
     }
     /* añado los dias de este mes*/
