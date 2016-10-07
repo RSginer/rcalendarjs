@@ -1,7 +1,7 @@
 var showOrHide = false;
 var today = new Date();
 var date = new Date(today.getFullYear(), today.getMonth(), 01);
-
+/*Localizo el elemento personalizado <rcalendar/> y le añado los contenedores y el boton*/
 document.getElementsByTagName("rcalendar")[0].innerHTML =
         '<button class="btn btn--show" onclick="show()"><i class="fa fa-calendar"></i> Calendario</button>'+
         '<span id="info-message" class="info-message"><i class="fa fa-reply"></i> Click para mostrar </span>' +
@@ -10,7 +10,7 @@ document.getElementsByTagName("rcalendar")[0].innerHTML =
 initCalendar(date);
 
 function initCalendar(date) {
-
+    /* Añado el contenido estatico al calendario*/
     document.getElementById("content-calendar").innerHTML =
             '<div class="right"><button class="btn btn__add-month" onclick="addMonth()">Siguiente</button></div>' +
             '<div class="left"><button class="btn btn__sub-month" onclick="subMonth()">Anterior</button></div>  <br>' +
@@ -37,13 +37,14 @@ function initCalendar(date) {
     var monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     var text = "";
     var numBlankDivs;
-    
+    var numAddDays;
     header.innerHTML = months[date.getMonth()] + " - " + date.getFullYear();
-
+    // Compruebo si el año es bisiesto
     if (isLeap(date.getFullYear())) {
         monthDays[1] = 29;
     }
-        var numAddDays;
+    // Compruebo cuando empieza el mes para despues calcular donde colocar los divs 'numBlankDivs' y en que numero acabar los dias del
+    // mes anterior 'numAddDays'
     if (date.getDay() != 0) {
         numBlankDivs = date.getDay();
         numAddDays = date.getDay()-1;
@@ -51,9 +52,11 @@ function initCalendar(date) {
         numBlankDivs = 7;
         numAddDays = date.getDay();
     }
+    /* añado los dias del mes anterior para completar la semana*/
     for (var i = (monthDays[date.getMonth()-1]-numBlankDivs)+2; i <=  monthDays[date.getMonth()-1]; i++) {
         text += '<div class="calendar__week__day calendar__week__day--before">'+i+'</div>';
     }
+    /* añado los dias de este mes*/
     for (var i = 1; i <= monthDays[date.getMonth()]; i++) {
         if (today.getDate() == i && today.getMonth() == date.getMonth() && today.getFullYear() == date.getFullYear()) {
             text += '<div class="calendar__week__day calendar__week__day--current-day">' + i + '</div>';
@@ -61,13 +64,16 @@ function initCalendar(date) {
             text += '<div class="calendar__week__day">' + i + '</div>';
         }
     }
+    /*añado los dias del siguiente mes para completar la semana*/
       for (var i = 1; i <=  (42-monthDays[date.getMonth()]-numAddDays); i++) {
         text += '<div class="calendar__week__day calendar__week__day--before">'+i+'</div>';
     }
 
     body.innerHTML = text;
 }
-
+/*
+ * Suma un mes a la fecha y pinta de nuevo el calendario
+ */
 function addMonth() {
     if (this.date.getMonth() >= 11) {
         this.date = new Date((this.date.getFullYear() + 1), 00, 01);
@@ -76,7 +82,9 @@ function addMonth() {
     }
     initCalendar(this.date);
 }
-
+/*
+ * Resta un mes a la fecha y pinta de nuevo el calendario
+ */
 function subMonth() {
     if (this.date.getMonth() <= 0) {
         this.date = new Date((this.date.getFullYear() - 1), 11, 01);
@@ -85,11 +93,13 @@ function subMonth() {
     }
     initCalendar(this.date);
 }
-
+/*
+ * Comprueba si el año es bisiesto
+ */
 function isLeap(year) {
     return ((year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0)));
 }
-
+/*Muestra o oculta el calendario*/
 function show() {
     if (this.showOrHide == true) {
         document.getElementById("content-calendar").style = "visibility:hidden";
