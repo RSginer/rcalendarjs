@@ -1,6 +1,7 @@
 .calendar{
     width:702px;
     border:1px solid #dc8f00;
+    background-color: white;
     border-radius: 10px;
     box-shadow: 5px 10px 40px 0px green;
 }
@@ -43,7 +44,14 @@
     width: 100%;
     display: inline-block;
 }
-
+@keyframes anim{
+    from{opacity:0.5;}
+    to{opacity:1;}
+}
+.animated{
+    animation-name: anim;
+    animation-duration: 2s;
+}
 .calendar__week__day{
     display: inline-block;
     width: 100px;
