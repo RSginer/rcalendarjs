@@ -64,10 +64,10 @@ function initCalendar(date) {
     }
 
     /* Añado los dias del mes anterior para completar la semana 
-     * Lo que hago es inicializar la i con el ultimo dia del mes anterior - el dia de la semana + 1
-     * porque como empieza en 0
+     * Lo que hago es inicializar la i con el ultimo dia del mes anterior - el dia de la semana + 2
+     * 
      * */
-    for (var i = (monthDays[beforeMonth] - numBlankDivs) + 1; i < monthDays[beforeMonth]; i++) {
+    for (var i = (monthDays[beforeMonth] - numBlankDivs) +2; i <= monthDays[beforeMonth]; i++) {
         text += '<div class="calendar__week__day calendar__week__day--disabled">' + i + '</div>';
     }
     
