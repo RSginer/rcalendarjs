@@ -31,6 +31,7 @@
     background-color:orangered;
     color:white;
     display: block;
+    width: 700px;
     font-weight: bold;
 }
 
@@ -44,7 +45,7 @@
 
 .calendar__week{
     background-color: white;
-    width: 100%;
+    width: 700px;
     border-bottom-right-radius: 9px;
     border-bottom-left-radius: 9px;
     display: inline-block;
